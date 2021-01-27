@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
 
+import org.hibernate.ResourceClosedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.emersonluiz.DsClient.dto.ClientDTO;
 import com.emersonluiz.DsClient.entities.Client;
 import com.emersonluiz.DsClient.repositories.ClientRepository;
+import com.emersonluiz.DsClient.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class ClientService {
@@ -40,6 +42,19 @@ public class ClientService {
 		entity.setName(dto.getName());
 		entity = repository.save(entity);
 		return new ClientDTO(entity);
+	}
+
+	@Transactional
+	public ClientDTO update(Long id, ClientDTO dto) {
+		try {
+		Client entity = repository.getOne(id);
+		entity.setName(dto.getName());
+		entity = repository.save(entity);
+		return new ClientDTO(entity);
+		}
+		catch(EntityNotFoundException e) {
+			throw new ResourceNotFoundException("Id not found" + id);
+		}
 	}	
 }
 
