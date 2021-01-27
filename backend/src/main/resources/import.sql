@@ -1,3 +1,3 @@
-INSERT INTO tb_client (name) VALUES ('Angela Dourado');
-INSERT INTO tb_client (name) VALUES ('Ana Paula Leite');
-INSERT INTO tb_client (name) VALUES ('Tatiane Leite Andrade');
+INSERT INTO tb_client (name, created_At) VALUES ('Angela Dourado', NOW());
+INSERT INTO tb_client (name, created_At) VALUES ('Ana Leite', NOW());
+INSERT INTO tb_client (name, created_At) VALUES ('Tatiane Leite', NOW());
