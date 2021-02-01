@@ -2,6 +2,7 @@ package com.emersonluiz.DsClient.services;
 
 import java.util.Optional;
 
+import javax.persistence.Column;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,19 +39,32 @@ public class ClientService {
 		return new ClientDTO(entity);
 	}
 
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	@Transactional
 	public ClientDTO insert(ClientDTO dto) {
 		Client entity = new Client();
 		entity.setName(dto.getName());
+		entity.setCpf(dto.getCpf());
+		entity.setIncome(dto.getIncome());
+		entity.setBirthDate(dto.getBirthDate());
+		entity.setChildren(dto.getChildren());
+		
+
 		entity = repository.save(entity);
 		return new ClientDTO(entity);
 	}
 
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	@Transactional
 	public ClientDTO update(Long id, ClientDTO dto) {
 		try {
 		Client entity = repository.getOne(id);
 		entity.setName(dto.getName());
+		entity.setCpf(dto.getCpf());
+		entity.setIncome(dto.getIncome());
+		entity.setBirthDate(dto.getBirthDate());
+		entity.setChildren(dto.getChildren());
+		
 		entity = repository.save(entity);
 		return new ClientDTO(entity);
 		}
