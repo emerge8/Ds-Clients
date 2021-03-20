@@ -3,7 +3,7 @@
 
 # Sobre o projeto
 
-Ds Clients é uma aplicação Backend que visa fazer crud de clients no postman. Esse crud foi um dos desafios propostos no Bootcamp que é um curso organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
+Ds Clients é uma aplicação Backend que visa fazer crud de clients no postman. Esse crud foi um dos desafios propostos no Bootcamp Spring e React que é um curso organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
 
 A aplicação consiste em um crud de clients com descrição de salário, quantidade de filhos, nome, cpf e data de aniversário do client.
  
