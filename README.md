@@ -8,7 +8,7 @@ Ds Clients é uma aplicação Backend que visa fazer crud de clients no postman.
 A aplicação consiste em um crud de clients com descrição de salário, quantidade de filhos, nome, cpf e data de aniversário do client.
  
 
-## Layout web
+## Rodando no Postman
 
 ![Web 1](https://github.com/emerge8/assets/blob/main/Postman-crud-clients.gif)
 
