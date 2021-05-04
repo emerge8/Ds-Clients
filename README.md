@@ -28,7 +28,7 @@ Pré-requisitos: Java 11
 
 ```bash
 # clonar repositório
-dscatalog-bootcamp-devsuperior
+emerge8/Ds-Client
 
 # entrar na pasta do projeto back end
 cd backend
